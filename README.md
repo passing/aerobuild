@@ -5,9 +5,9 @@ Scripts simplifying programming of glowing juggling props from aerotech. http://
 
 ### options
 ```
---input \<input file\>
---num \<number of props/output files\>
---labels \<label file\>
+--input <input file>
+--num <number of props/output files>
+--labels <label file>
 --debug
 ```
 
@@ -22,12 +22,12 @@ it is possible to include an audio file into the video
 
 ### options
 ```
---input \<glo input files\>
---audio \<audio file\>
---width \<output width\> (default: 640)
---height \<output height\> (default: relative to width / 16:9)
---output \<output file name\> (default: output.mp4)
---fps \<output frames per second\> (default: 30)
+--input <glo input files>
+--audio <audio file>
+--width <output width> (default: 640)
+--height <output height> (default: relative to width / 16:9)
+--output <output file name> (default: output.mp4)
+--fps <output frames per second> (default: 30)
 --amplify
 --debug
 ```
