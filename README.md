@@ -1,9 +1,9 @@
 # aerobuild
 Scripts simplifying programming of glowing juggling props from aerotech. http://www.aerotechprojects.com
 
-# build.pl
+## build.pl
 
-options:
+### options
 ```
 --input \<input file\>
 --num \<number of props/output files\>
@@ -11,16 +11,16 @@ options:
 --debug
 ```
 
-# visualize.pl
+## visualize.pl
 the script creates a video (using avconv), simulating the light sequences of multiple glowing juggling props.
 it is possible to include an audio file into the video
 
-dependencies:
+### dependencies
 - avconv
 - libx264
 - libvo_aacenc
 
-options:
+### options
 ```
 --input \<glo input files\>
 --audio \<audio file\>
