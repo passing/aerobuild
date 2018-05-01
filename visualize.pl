@@ -34,7 +34,7 @@ GetOptions (
 ) || die ("invalid options");
 
 my $border = int($width * 0.01);
-$height = int($width / 16 * 9) unless ($height);
+$height = int($width / 32 * 9) * 2 unless ($height);
 
 # read sequence from file / return array of lines
 sub read_file ($)

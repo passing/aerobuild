@@ -185,6 +185,7 @@ sub execute_labels ($$)
 			printf ("%s: %d / %d, add: %d\n", $l, $time + $time_added, $t, $add);
 
 			die ("label exceeded") if ($add < 0);
+			die ("delay exceeds 65535") if ($add > 65535);
 
 			if ($t && $add > 0)
 			{
