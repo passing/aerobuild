@@ -175,14 +175,15 @@ sub execute_labels ($$)
 			$time = $timeline[$pos]
 		}
 
-		if ($line =~ /^;L-(.*)$/)
+		if ($line =~ /^;(?:L-|LABEL )(\w*)(?: ([+-]?[0-9]+))?$/)
 		{
-			my $l = $1;
-			my $t = $labels{$l};
+			my $label = $1;
+			my $delta = $2;
+			my $t = $labels{$label};
 
-			my $add = $t - $time - $time_added;
+			my $add = $t + $delta - $time - $time_added;
 
-			printf ("%s: %d / %d, add: %d\n", $l, $time + $time_added, $t, $add);
+			printf ("Label %s: %d / %d%+d, add: %d\n", $label, $time + $time_added, $t, $delta, $add);
 
 			die ("label exceeded") if ($add < 0);
 			die ("delay exceeds 65535") if ($add > 65535);
