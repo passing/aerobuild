@@ -12,6 +12,7 @@ my $height;
 
 my $fps=30;
 my $vcodec = "libx264";
+my $acodec = "aac";
 my $ext = "mp4";
 
 #################
@@ -333,16 +334,15 @@ if ($amplify)
 }
 
 # add audio input
-my $avconv_audio;
+my $ffmpeg_audio;
 
 if ($audio)
 {
-	$avconv_audio = "-i $audio";
+	$ffmpeg_audio = "-i $audio";
 }
 
 # send all data to video encoding pipe
-#open (PIPE, "|avconv -y -f image2pipe -vcodec png -r $fps -i - $avconv_audio -vcodec libx264 -preset slow -pix_fmt yuv420p -b:v 500k -r 30 -vf \"setsar=1:1\" -acodec libvo_aacenc -ac 2 -ar 44100 -ab 128k $output");
-open (PIPE, "|avconv -y -f image2pipe -vcodec png -r $fps -i - $avconv_audio -vcodec libx264 -preset slow -pix_fmt yuv420p -b:v 500k -vf \"setsar=1:1\" -acodec libvo_aacenc -ac 2 -ar 44100 -ab 128k $output");
+open (PIPE, "|ffmpeg -y -f image2pipe -vcodec png -r $fps -i - $ffmpeg_audio -vcodec libx264 -preset slow -pix_fmt yuv420p -b:v 500k -vf \"setsar=1:1\" -c:a copy $output");
 binmode PIPE;
 
 for my $i (0 .. @{$sequences[0]} - 1)
