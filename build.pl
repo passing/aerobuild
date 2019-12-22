@@ -175,7 +175,7 @@ sub execute_labels ($$)
 			$time = $timeline[$pos]
 		}
 
-		if ($line =~ /^;(?:L-|LABEL )(\w*)(?: ([+-]?[0-9]+))?$/)
+		if ($line =~ /^;(?:L-|LABEL )([-\w]*)(?: ([+-]?[0-9]+))?$/)
 		{
 			my $label = $1;
 			my $delta = $2;
