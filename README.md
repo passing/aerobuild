@@ -3,6 +3,8 @@ Scripts simplifying programming of glowing juggling props from aerotech. http://
 
 Supports syntax as described in *User guide V2.3*
 
+:warning: This project is no longer maintained in favor of its predecessor [aeropy](https://github.com/passing/aeropy), implemented in python.
+
 ## build.pl
 
 ### options
